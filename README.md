@@ -59,3 +59,11 @@ Contributions to this project are welcome! If you find any issues or have improv
 
 - Pulumi Documentation
 - Metal as a Service (MaaS) Documentation
+
+## Go further
+### Publish this project
+
+```bash
+python3 setup.py sdist bdist_wheel
+twine upload --repository pypi dist/*
+```
