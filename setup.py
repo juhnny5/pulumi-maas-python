@@ -35,7 +35,7 @@ def readme():
         return "maas Pulumi Package - Development Version"
 
 
-setup(name='pulumi-maas',
+setup(name='pulumi_maas',
       python_requires='>=3.7',
       version=VERSION,
       description="A Pulumi package for creating and managing Canonical Metal-As-A-Service (MAAS) resources.",
