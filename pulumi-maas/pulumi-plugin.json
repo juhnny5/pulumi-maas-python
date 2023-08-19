@@ -1,0 +1,5 @@
+{
+  "resource": true,
+  "name": "maas",
+  "server": "https://github.com/juhnny5/pulumi-maas/releases/download/v${VERSION}"
+}
