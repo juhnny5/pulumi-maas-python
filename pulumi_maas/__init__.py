@@ -28,13 +28,6 @@ from .vm_host_machine import *
 from ._inputs import *
 from . import outputs
 
-# Make subpackages available:
-if typing.TYPE_CHECKING:
-    import pulumi-maas.config as __config
-    config = __config
-else:
-    config = _utilities.lazy_import('pulumi-maas.config')
-
 _utilities.register(
     resource_modules="""
 [
