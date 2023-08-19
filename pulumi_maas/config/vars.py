@@ -4,6 +4,7 @@
 
 import copy
 import warnings
+import os
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
@@ -13,26 +14,33 @@ import types
 
 __config__ = pulumi.Config('maas')
 
-
 class _ExportableConfig(types.ModuleType):
     @property
     def api_key(self) -> Optional[str]:
         """
         The MAAS API key
         """
-        return __config__.get('apiKey')
+        if os.getenv("MAAS_API_KEY"):
+            return os.getenv("MAAS_API_KEY")
+        else:
+            return __config__.get('apiKey')
 
     @property
     def api_url(self) -> Optional[str]:
         """
         The MAAS API URL (eg: http://127.0.0.1:5240/MAAS)
         """
-        return __config__.get('apiUrl')
+        if os.getenv("MAAS_API_URL"):
+           return os.getenv("MAAS_API_URL")
+        else:
+            return __config__.get('apiUrl')
 
     @property
     def api_version(self) -> Optional[str]:
         """
         The MAAS API version (default 2.0)
         """
-        return __config__.get('apiVersion')
-
+        if os.getenv("MAAS_API_VERSION"):
+            return os.getenv("MAAS_API_VERSION")
+        else:
+            return __config__.get('apiVersion')
