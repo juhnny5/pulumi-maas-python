@@ -61,6 +61,7 @@ Contributions to this project are welcome! If you find any issues or have improv
 - Metal as a Service (MaaS) Documentation
 
 ## Go further
+
 ### Publish this project
 
 ```bash
